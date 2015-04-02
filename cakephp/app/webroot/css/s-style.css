@@ -1,0 +1,101 @@
+
+form#form2 {
+	padding: 7px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+form#form2 p {
+	margin:7px 0 0;
+	padding:10px;
+	font-size: 12px;
+}
+
+/*最初の<p>にはマージンをつけない（:first-child疑似クラスによる指定）*/
+form#form2 p:first-child {
+	margin:0;}
+
+/* span要素をブロック化しフロートでフォーム部品と横に並べる*/
+form#form2 p span {
+	width: 19em;
+	margin:0px;
+	display:block;
+	float:left;
+}
+
+/*「:after」で <p>の末尾でフロートをクリア*/
+form#form2 p:after {
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;     /*←フロートをクリア*/
+}
+
+/* テキスト入力部品の見た目を統一する */
+form#form2 p label .txtfiled, form#form2 p select {
+	width:300px;
+	padding:3px 5px;
+	margin:0px;
+	color:#666;
+	border: solid 1px #ccc;
+	background: #fff;
+	/*シャドウをつける。*/
+    -webkit-box-shadow: 1px 1px 1px #fff;
+    -moz-box-shadow: 1px 1px 1px #fff;
+	box-shadow: 1px 1px 1px #fff;
+}
+
+form#form2 p select {
+	/*selectは250では大きすぎるので*/
+	width:100px;
+}
+
+/*チェックボックス、ラジオボタンのブロックの指定*/
+form#form2 p span.check, form#form2 p span.radio {
+	display:block;
+	width:300px;
+}
+
+/*チェックボックス、ラジオボタンの label要素を横に並べる*/
+form#form2 p span.check label, form#form2 p span.radio label {
+	margin-right: 2em;
+	display: block;
+	float: left;
+	width: 9em;
+}
+
+/*ラジオボタンの label要素の幅は9emでは大きすぎるので調整*/
+form#form2 p span.radio label {
+	width: 4em;
+}
+
+/*「:after」で <span>の末尾でフロートをクリア*/
+form#form2 p span.check:after, form#form2 p span.radio:after {
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;     /*←フロートをクリア*/
+}
+
+/*input要素とテキストがくっつかないように右にマージンを少し*/
+form#form2 p span.check label input, form#form2 p span.radio label input {
+	margin-right:0.5em;
+}
+
+/*チェックボックス、ラジオボタンの label要素にロールオーバー時の変化を指定する*/
+form#form2 p span.check label:hover , form#form2 p span.radio label:hover{
+	background : #C08B9B;
+	color: #fff;
+	font-weight:bold;
+}
+
+/*送信・リセットボタンの体裁を指定（[type="○○"]で属性の値でセレクト）*/
+form#form2 p input[type="submit"] ,
+form#form2 p input[type="reset"] {
+
+	
+}
+
